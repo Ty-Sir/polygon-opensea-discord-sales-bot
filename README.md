@@ -69,5 +69,3 @@ yarn ts-node checkSales.ts
 ```
 
 as the Run Command.
-# polygon-opensea-discord-sales-bot
-# polygon-opensea-discord-sales-bot
