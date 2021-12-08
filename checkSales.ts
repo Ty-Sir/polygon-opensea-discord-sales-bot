@@ -3,9 +3,11 @@ import Discord, { TextChannel } from 'discord.js';
 import fetch from 'node-fetch';
 import { ethers } from "ethers";
 
-const COLLECTION_SLUG = 'cookiethedog';
-const DISCORD_BOT_TOKEN = 'OTAyMjgxMTE3MzgwNTE4MDA5.YXcIxQ.q3BJGcm-hpigOwg1QKwsBTD6mrs';
-const DISCORD_CHANNEL_ID = '901146130254020658'
+//https://opensea.io/collection/cookiethedog --> collection slug === cookiethedog
+const COLLECTION_SLUG = 'ENTER_NAME_HERE';
+const DISCORD_BOT_TOKEN = 'ENTER_BOT_TOKEN';
+const DISCORD_CHANNEL_ID = 'ENTER_CHANNEL_ID_WHERE_YOU_WANT_THE_POST';
+const API_KEY = 'ENTER_API_KEY_RECEIVED_FROM_OPENSEA';
 
 const discordBot = new Discord.Client();
 const  discordSetup = async (): Promise<TextChannel> => {
@@ -42,7 +44,7 @@ const buildMessage = (sale: any) => (
 async function main() {
   const channel = await discordSetup();
   const seconds = process.env.SECONDS ? parseInt(process.env.SECONDS) : 3_600;
-  const hoursAgo = (Math.round(new Date().getTime() / 1000) - (seconds)); // in the last hour, run hourly?
+  const hoursAgo = (Math.round(new Date().getTime() / 1000) - (seconds)); // in the last hour, run hourly
   
   const params = new URLSearchParams({
     offset: '0',
@@ -56,7 +58,7 @@ async function main() {
     "https://api.opensea.io/api/v1/events?" + params, {
       method: "GET",
       headers: {
-      "X-API-KEY": "023c26ac08624ce0ab319209dc1c4dc4",
+      "X-API-KEY": API_KEY,
       }
     }).then((resp) => resp.json());
     
