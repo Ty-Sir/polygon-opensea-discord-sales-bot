@@ -3,7 +3,7 @@ import Discord, { TextChannel } from 'discord.js';
 import fetch from 'node-fetch';
 import { ethers } from "ethers";
 
-//https://opensea.io/collection/cookiethedog --> collection slug === cookiethedog
+//https://opensea.io/collection/punks --> collection slug === punks
 const COLLECTION_SLUG = 'ENTER_NAME_HERE';
 const DISCORD_BOT_TOKEN = 'ENTER_BOT_TOKEN';
 const DISCORD_CHANNEL_ID = 'ENTER_CHANNEL_ID_WHERE_YOU_WANT_THE_POST';
